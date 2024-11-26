@@ -1,9 +1,8 @@
 
 <?php
 if (isset(
-    $_GET['submit'] // Check if the form has been submitted 
+    $_GET['submit']
 )) {
-    // Process the form data here
     $num1 = $_GET['num1'];
     $num2 = $_GET['num2'];
     $operation = $_GET["operation"];
@@ -29,27 +28,9 @@ if (isset(
         }
         echo "Result: $result";
     } else {
-        echo "Please fill in all fields"; // Display an error message if any field is empty
-        header("index.php");
+        echo "Please fill in all fields";
     }
 } else {
-    // Display the form if it hasn't been submitted yet
-    echo "<form action='" . $_SERVER['PHP_SELF'] . "' method='get'>
-    <label for='num1'>Number 1:</label>
-    <input type='number' id='num1' name='num1'><br><br>
-    <label for='num2'>Number 2:</label>
-    <input type='number' id='num2' name='num2'><br><br>
-    <label for='operation'>Operation:</label>
-    <select id='operation' name='operation'>
-    <option value='add'>Add</option>
-    \
-    <option value='subtract'>Subtract</option>
-    \
-    <option value='multiply'>Multiply</option>
-    \
-    <option value='divide'>Divide</option>
-    </select><br><br>
-    <input type='submit' name='submit' value='Calculate'/>
-    </form>";
+    echo "Please fill in all fields";
 }
 ?>
